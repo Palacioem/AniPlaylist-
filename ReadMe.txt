@@ -38,7 +38,7 @@ This is a web application boilerplate that integrates React, Vite, Express, and 
 1. To get started, clone the repository and install the dependencies:
 
    ```bash
-   git clone https://github.com/bfeist/vite-express-ts.git
+   git clone 'repo'
    cd vite-express-ts
    npm install
    ```
