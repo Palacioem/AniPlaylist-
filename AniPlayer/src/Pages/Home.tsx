@@ -16,7 +16,7 @@ function Home(){
     const [seen, setSeen] = useState<string[]>(["Lady Gaga", "Drake", "Adele", "Beyonce", "Ed Sheeran"])
     const [isLoggedIn, setLogin] = useState(false)
     const [User, setUser] = useState<UserProfile| undefined>()
-    const [SearchType, setSearchType] = useState("Track")
+    const [SearchType, setSearchType] = useState("track")
 
     const fetchAPI = async (searchQuery:string, type:string) => {
       try {
@@ -27,7 +27,7 @@ function Home(){
           }
         });
         let formattedItems: Song[] = [];
-        if (type === 'Track') {
+        if (type === 'track') {
           formattedItems = response.data.tracks.items.map((item: any) => ({
             id: item.id,
             name: item.name,
@@ -37,7 +37,7 @@ function Home(){
             spotifyUrl: item.external_urls.spotify,
             previewUrl: item.preview_url || null, // Some tracks might not have previews
           }));
-        } else if (type === 'Playlist') {
+        } else if (type === 'playlist') {
           formattedItems = response.data.playlists.items.map((item: any) => ({
             id: item.id,
             name: item.name,
@@ -45,7 +45,7 @@ function Home(){
             image: item.images[0]?.url || "", // Handle missing images
             spotifyUrl: item.external_urls.spotify,
           }));
-        } else if (type === 'Artist') {
+        } else if (type === 'artist') {
             formattedItems = response.data.artists.items.map((item: any) => ({
             id: item.id,
             name: item.name,
@@ -53,7 +53,7 @@ function Home(){
             image: item.images[0]?.url || "", // Handle missing images
             spotifyUrl: item.external_urls.spotify,
             }));
-          } else if (type === 'Album') {
+          } else if (type === 'album') {
             formattedItems = response.data.albums.items.map((item: any) => ({
             id: item.id,
             name: item.name,

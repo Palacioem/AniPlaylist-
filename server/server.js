@@ -89,11 +89,11 @@ const getSpotifyToken = (callback) => {
 
 app.get('/spotify-search',ensureSpotifyToken, async (req, res) => {
     const searchQuery = req.query.q;
-
+    const type = req.query.type;
     try {
         const response = await axios.get('https://api.spotify.com/v1/search', {
             headers: { Authorization: `Bearer ${spotifyToken}` },
-            params: { q: searchQuery, type: 'track' }
+            params: { q: searchQuery, type: type }
         });
         res.json(response.data);
         

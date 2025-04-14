@@ -13,7 +13,7 @@ return (
             value={value}
             radius="xl"
             size="sm"
-            data={['Track', 'Album', 'Artist', 'Playlist']}
+            data={['track', 'album', 'artist', 'playlist']}
             classNames={classes}
             onChange={onChange}
             
